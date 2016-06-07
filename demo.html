@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+    <script
+        src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous">
+    </script>
+    <script src="filter.js"></script>
+    <style>
+    [data-filter="item"] {
+        border: 1px solid black;
+        margin: 20px 0;
+    }
+    input[type="text"] {
+        display: block;
+    }
+    </style>
+</head>
+<body>
+<div data-component="filter">
+    <!-- Searchbox style filtering -->
+    <input type="text" data-filter-control="searchbox">
+
+    <!-- Checkbox style filtering -->
+    <input name="terms" data-filter-control="checkbox" value="first" type="checkbox">First
+    <input name="terms" data-filter-control="checkbox" value="second" type="checkbox">Second
+    <input name="terms" data-filter-control="checkbox" value="third" type="checkbox">Third
+    <input name="terms" data-filter-control="checkbox" value="fourth" type="checkbox">Fourth
+
+    <div data-filter="container">
+        <div
+            data-filter="item"
+            data-filter-terms="first,second,third,fourth">
+            First, Second, Third, Fourth
+        </div>
+        <div
+            data-filter="item"
+            data-filter-terms="first,second,fourth">
+            First, Second, Fourth
+        </div>
+        <div
+            data-filter="item"
+            data-filter-terms="first,fourth">
+            First, Fourth
+        </div>
+        <div
+            data-filter="item"
+            data-filter-terms="fourth">
+            Fourth
+        </div>
+    </div>
+</div>
+</body>
+</html>
